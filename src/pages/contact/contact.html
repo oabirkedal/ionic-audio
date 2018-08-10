@@ -7,11 +7,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+  <div *ngIf="duel_ready">
+    <h1>Duel is Ready!</h1>
+  </div>
+  <div *ngIf="!duel_ready">
+    <h1>{{ countdown }}</h1>
+  </div>
+  <button outline clear ion-button class="text-center" (click)="duelMode()">
+    Change
+  </button>
 </ion-content>

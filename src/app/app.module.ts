@@ -15,6 +15,7 @@ import { NativeAudio } from '@ionic-native/native-audio';
 import { Media, MediaObject } from '@ionic-native/media';
 
 import { File } from '@ionic-native/file';
+import { AudioProvider } from '../providers/audio/audio';
 
 @NgModule({
   declarations: [
@@ -41,8 +42,8 @@ import { File } from '@ionic-native/file';
     NativeAudio,
     SplashScreen,
     Media,
-    File,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AudioProvider
   ]
 })
 export class AppModule {}

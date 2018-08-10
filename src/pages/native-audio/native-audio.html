@@ -9,11 +9,32 @@
   <p>
 
   </p>
-
-  <button outline clear ion-button class="text-center" (click)="playAudio('fireSimple')">
+  <button outline clear ion-button class="text-center" (click)="audio.playAudio('fireSimple')">
     Play Simple
   </button>
-  <button outline clear ion-button class="text-center" (click)="playAudio('fireComplex')">
+  <button outline clear ion-button class="text-center" (click)="audio.playAudio('fireComplex')">
     Play Complex
   </button>
+
+  <button outline clear ion-button class="text-center" (click)="audio.setVolume('fireComplex', volume)">
+    Change Volume
+  </button>
+
+  <ion-item  >
+    <ion-input placeholder="Value" [(ngModel)]="volume" type="text" autocorrect="off" autocapitalize="none"></ion-input>
+  </ion-item>
+
+  <div class="progress-outer">
+    <div class="progress-inner" [style.width]="progress + '%'">
+        {{progress}}%
+    </div>
+</div>
+
+<button outline clear ion-button class="text-center" (click)="changeProgress(10)">
+  Increment
+</button>
+
+<button outline clear ion-button class="text-center" (click)="changeProgress(-10)">
+  Decrement
+</button>
 </ion-content>
